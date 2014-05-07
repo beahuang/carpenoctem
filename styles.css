@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('BebasNeue-webfont.eot');
+    src: url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BebasNeue-webfont.woff') format('woff'),
+         url('BebasNeue-webfont.ttf') format('truetype'),
+         url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+	margin: 0;
+	padding: 0;
+	background: #000;
+	overflow: hidden;
+	font-family: sans-serif;
+}
+h2{
+	 font-family: 'bebas_neueregular';
+	 font-size: 50px;
+}
+h3{
+	font-weight: normal;
+	font-size: 30px;
+}
+h4{
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	color: #FFF;
+}
+#container{
+	width: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#overlay{
+	padding: 0;
+	margin: 0;
+	background: rgba(0, 0, 2, .8);
+	z-index: 69;
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 0;
+	left: 0;
+	display: none;
+	transition: all 0.4s ease 0.0s;
+	-moz-transition: all 0.4s ease 0.0s;
+	-webkit-transition: all 0.4s ease 0.0s;
+	-o-transition: all 0.4s ease 0.0s;
+	-ms-transition: all 0.4s ease 0.0s;
+	cursor: pointer;
+}
+#meteor{
+	width: 100%;
+	height: auto;
+}
+.illustration{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 68;
+	top: 0;
+	margin-left: 0;
+	opacity:1;
+	left: 0;
+	
+	-webkit-animation: fadeOut 3s ease-in-out 3s forwards;
+	
+}
+@-webkit-keyframes 'fadeOut' {
+
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: .2;
+	}
+}
+
+.illustration.faded{
+	opacity: .2;
+	-webkit-animation: none;
+}
+.character{
+	position: absolute;
+	
+	width: 150px;
+	height: 250px;
+	z-index: 68;
+	cursor: default;
+	opacity: 1;
+	-webkit-animation: fadeOut 3s ease-in-out 3s forwards;
+	text-align: center;
+	cursor: pointer;
+	
+}
+.character.faded{
+	opacity: .2;
+	-webkit-animation: none;
+}
+.character.show{
+	display: inline;
+}
+.character h4{
+	opacity: 0;
+	transition: all 0.4s ease 0.0s;
+	-moz-transition: all 0.4s ease 0.0s;
+	-webkit-transition: all 0.4s ease 0.0s;
+	-o-transition: all 0.4s ease 0.0s;
+	-ms-transition: all 0.4s ease 0.0s;
+	z-index: 68;
+}
+
+.character.faded:hover > h4{
+	opacity: 1;
+	margin-top: -20px;
+}
+.malepolice{
+	background: url('characters/pstation-mancop.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	left: 50px;
+	
+	width: 380px;
+	height: 600px;
+}
+.femalepolice{
+	background: url('characters/pstation-ladycop.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	right: 50px;
+	
+	width: 380px;
+	height: 600px;
+}
+.mom{
+	background: url('characters/hospital-mom.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	right: 50px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+.infected{
+	background: url('characters/hospital-infected.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	left: 50px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+.barista{
+	background: url('characters/cafe-barista.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	right: 50px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+.sadguy{
+	background: url('characters/cafe-sadguy.png') center no-repeat;
+	background-size: 100% auto;
+	top: 100px;
+	left: 50px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+
+.bartender{
+	background: url('characters/pub-bartender.png') center no-repeat;
+	background-size: 100% auto;
+	top: 300px;
+	left: 50px;
+	
+	width: 400px;
+	height: 700px;
+}
+.fighter{
+	background: url('characters/pub-fighter.png') center no-repeat;
+	background-size: 100% auto;
+	top: 300px;
+	right: 70px;
+	
+	width: 400px;
+	height: 600px;
+}
+
+.mugger{
+	background: url('characters/park-mugger.png') center no-repeat;
+	background-size: 100% auto;
+	top: 300px;
+	right: 50px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+.couple{
+	background: url('characters/park-threesome.png') center no-repeat;
+	background-size: 100% auto;
+	top: 300px;
+	left: 70px;
+	
+	width: 400px;
+	height: 600px;
+	
+}
+
+
+
+
+#story{
+	width: 80%;
+	height: 300px;
+	margin: 70px auto;
+	color: white;
+}
+
+p{
+	display: none;
+}
+
+
+
+p.active{
+	display: inline;
+}
+
+/*#story.coffee{
+	width: 378px;
+	height: 250px;
+	overflow-y: scroll;
+	/*margin-right: 66px;*!/
+	z-index: 69;
+}*/
+
+/*MAP STUFF*/
+#map{
+	display:none;
+	width: 254px;
+	height: 324px;
+	z-index: 71;
+	position: absolute;
+	left: 24px;
+	bottom: -35px;	
+}
+
+.Poi{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	float: left;
+	position: absolute;
+	background-size: 40px 40px;
+	
+	transition: all 0.2s ease 0.0s;
+	-moz-transition: all 0.2s ease 0.0s;
+	-webkit-transition: all 0.2s ease 0.0s;
+	-o-transition: all 0.2s ease 0.0s;
+	-ms-transition: all 0.2s ease 0.0s;
+}
+.Poi:hover, .Poi a:hover{
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
+	margin-left: -5px;
+	margin-top: -5px;
+
+}
+
+.Poi a{
+width: 50px;
+height: 50px;
+position: absolute;
+	
+}
+
+#coffee{
+	background-image: url('icons/coffee.png');
+	top: 70%;
+	left: 7%;
+}
+#pub{
+	background-image: url('icons/pub.png');
+	
+	top: 10%;
+	left: 20%;
+}
+#police{
+	background-image: url('icons/police.png');
+	
+	top: 40%;
+	left: 20%;
+}
+#hospital{
+	background-image: url('icons/hospital.png');
+	
+	top: 25%;
+	left: 60%;
+}
+#park{
+	background-image: url('icons/park.png');
+	
+	top: 70%;
+	left: 80%;
+}
+
+
+
+.Poi.visited:hover{
+	width: 40px;
+	height: 40px;
+	margin-left: 0px;
+	margin-top: 0px;
+	background-size: 40px 40px;
+}
+
+.Poi.visited a{
+	display: none;
+}
+#coffee.visited,#pub.visited,#police.visited,#hospital.visited,#park.visited{
+	cursor:default;
+}
+
+#coffee.visited{
+	background-image: url('icons/coffee_gray.png');
+}
+#pub.visited{
+	background-image: url('icons/pub_gray.png');
+}
+#police.visited{
+	background-image: url('icons/police_gray.png');
+}
+#hospital.visited{
+	background-image: url('icons/hospital_gray.png');
+}
+#park.visited{
+	background-image: url('icons/park_gray.png');
+}
+
+
+
+
+/*END MAP STUFF*/
+/*PHONE STUFF*/
+#phone{
+	position: absolute;
+	width: 150px;
+	height: 250px;
+	left: 50%;
+	margin-left: -75px;
+	bottom: -150px;
+	transition: all 0.4s ease 0.0s;
+	-moz-transition: all 0.4s ease 0.0s;
+	-webkit-transition: all 0.4s ease 0.0s;
+	-o-transition: all 0.4s ease 0.0s;
+	-ms-transition: all 0.4s ease 0.0s;
+	cursor: pointer;
+	z-index: 70;
+}
+#phone img{
+	width: 100%;
+}
+#phone.open{
+	bottom: 25%;
+	width: 300px;
+	left: 56%;
+	height: 500px;
+	cursor: default;
+}
+#phone:hover{
+	bottom: -15%;
+}
+
+#phone.open:hover{
+	bottom: 25%;
+}
+/*END PHONE STUFF*/
+#whereTo{
+	position: absolute;
+	height: 200px;
+	width: 300px;
+	left: 13%;
+	top: 23%;
+	z-index: 70;
+	color: #FFF;
+	text-align: center;
+	display: none;
+}
+
+#whereTo h2{
+	margin: 20px auto;
+}
+#whereTo h3{
+	transition: all 0.2s ease 0.0s;
+	-moz-transition: all 0.2s ease 0.0s;
+	-webkit-transition: all 0.2s ease 0.0s;
+	-o-transition: all 0.2s ease 0.0s;
+	-ms-transition: all 0.2s ease 0.0s;
+	
+	font-family: 'bebas_neueregular';
+	font-weight: normal;
+	font-size: 40px;
+}
+
+
